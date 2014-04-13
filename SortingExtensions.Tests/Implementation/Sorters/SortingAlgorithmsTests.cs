@@ -1,22 +1,27 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 using SortingExtensions.Contracts;
-using SortingExtensions.Implementation.Sorters;
+using SortingExtensions.Implementation;
 
 namespace SortingExtensions.Tests.Implementation.Sorters
 {
     [TestFixture]
     class SortingAlgorithmsTests : SorterTestBase
     {
-        /*[Test]
-        public void Hello()
+        [Test]
+        [TestCaseSource("DifferentLists")]
+        public void All_Registered_Sorters_Sorts_Correctly(IList<int> list)
         {
-            var list = Enumerable.Range(0, 20).Reverse().ToList();
-            var s = new ShellSort<int>();
-            s.Sort(list, 5, 10, Comparer<int>.Default);
-        }*/
+            foreach (string algorithmName in Enum.GetNames(typeof(SortAlgorithm)))
+            {
+                ISorter<int> sorter = SorterFactory.GetSorter<int>(algorithmName);
+                var clonedList = new List<int>(list);
+                sorter.Sort(clonedList, Comparer<int>.Default);
 
+                Assert.That(IsSorted(clonedList));
+            }
+        }
 
         [Test]
         [TestCaseSource("DifferentLists")]

@@ -49,12 +49,18 @@ namespace SortingExtensions.Implementation
 
         internal static ISorter<TComparable> GetSorter<TComparable>(SortAlgorithm algorithm) where TComparable : IComparable<TComparable>
         {
-            ISorterProvider sorterProvider = SorterProviders[algorithm.ToString()];
+            return GetSorter<TComparable>(algorithm.ToString());
+        }
+
+        internal static ISorter<TComparable> GetSorter<TComparable>(string algorithmName) where TComparable : IComparable<TComparable>
+        {
+            //TODO: add ability for using custom sorters, need add few overloads in extension methods
+            ISorterProvider sorterProvider = SorterProviders[algorithmName];
             if (sorterProvider == null) {
-                throw new ArgumentException(string.Format("Sorter provider is not registered for {0} sort algorithm", algorithm));
+                throw new ArgumentException(string.Format("Sorter provider is not registered for {0} sort algorithm", algorithmName));
             }
 
-            return sorterProvider.GetSorter<TComparable>(algorithm.ToString());
+            return sorterProvider.GetSorter<TComparable>(algorithmName);
         }
     }
 }

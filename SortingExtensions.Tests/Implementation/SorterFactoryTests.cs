@@ -17,20 +17,16 @@ namespace SortingExtensions.Tests.Implementation
             {
                 yield return new TestCaseData(SortAlgorithm.Shell).Returns(new ShellSorterProvider().GetSorter<int>(SortAlgorithm.Shell.ToString()));
                 yield return new TestCaseData(SortAlgorithm.Quick).Returns(new QuickSortProvider().GetSorter<int>(SortAlgorithm.Quick.ToString()));
+                yield return new TestCaseData(SortAlgorithm.QuickThreeWay).Returns(new QuickSortProvider().GetSorter<int>(SortAlgorithm.QuickThreeWay.ToString()));
+                yield return new TestCaseData(SortAlgorithm.QuickWithMedianOfThree).Returns(new QuickSortProvider().GetSorter<int>(SortAlgorithm.QuickWithMedianOfThree.ToString()));
                 yield return new TestCaseData(SortAlgorithm.Selection).Returns(new SelectionSorterProvider().GetSorter<int>(SortAlgorithm.Selection.ToString()));
                 yield return new TestCaseData(SortAlgorithm.MergeUpBottom).Returns(new MergeSorterProvider().GetSorter<int>(SortAlgorithm.MergeUpBottom.ToString()));
                 yield return new TestCaseData(SortAlgorithm.MergeBottomUp).Returns(new MergeSorterProvider().GetSorter<int>(SortAlgorithm.MergeBottomUp.ToString()));
+                yield return new TestCaseData(SortAlgorithm.MergeUpBottomSortForPartiallySorted).Returns(new MergeSorterProvider().GetSorter<int>(SortAlgorithm.MergeUpBottomSortForPartiallySorted.ToString()));
+                yield return new TestCaseData(SortAlgorithm.MergeUpBottomSortWithCutoff).Returns(new MergeSorterProvider().GetSorter<int>(SortAlgorithm.MergeUpBottomSortWithCutoff.ToString()));
                 yield return new TestCaseData(SortAlgorithm.Insertion).Returns(new InsertionSorterProvider().GetSorter<int>(SortAlgorithm.Insertion.ToString()));
                 yield return new TestCaseData(SortAlgorithm.Heap).Returns(new HeapSorterProvider().GetSorter<int>(SortAlgorithm.Heap.ToString()));
-            }
-        }
-
-        public IEnumerable<TestCaseData> SorterProvidersByCaseCaseData
-        {
-            get
-            {
-                //TODO implement others
-                yield return new TestCaseData(SortCase.PartiallySorted).Returns(new ShellSorterProvider().GetSorter<int>(SortAlgorithm.Bubble.ToString()));
+                yield return new TestCaseData(SortAlgorithm.Bubble).Returns(new BubbleSortProvider().GetSorter<int>(SortAlgorithm.Heap.ToString()));
             }
         }
 
@@ -42,10 +38,14 @@ namespace SortingExtensions.Tests.Implementation
         }
 
         [Test]
-        [TestCaseSource("SorterProvidersByCaseCaseData")]
-        public ISorter<int> SorterFactory_Returns_Correct_Sorter_ByCase(SortCase sortCase)
+        public void SorterFactory_AddSorterProvider_AddsProvider()
         {
-            return SorterFactory.GetSorter<int>(sortCase);
+            const string algorithmName = "customSortAlgorithm";
+            var sorterProvider = new TestSortProvider();
+
+            SorterFactory.AddSorterProvider(algorithmName, sorterProvider);
+
+            Assert.That(SorterFactory.GetSorter<int>(algorithmName) is TestSorter<int>);
         }
     }
 }

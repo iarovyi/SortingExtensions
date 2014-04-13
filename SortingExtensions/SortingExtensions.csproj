@@ -81,7 +81,6 @@
     <Compile Include="Contracts\SortOrder.cs" />
     <Compile Include="Extensions\CachedReflectionExtensions.cs" />
     <Compile Include="Extensions\ComparableExtensions.cs" />
-    <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Implementation\RandomProvider.cs" />
     <Compile Include="Implementation\ReversedComparer.cs" />

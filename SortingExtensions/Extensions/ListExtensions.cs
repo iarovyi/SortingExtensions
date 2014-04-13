@@ -302,6 +302,13 @@ namespace SortingExtensions
             list[index1] = list[index2];
             list[index2] = temp;
         }
+
+        internal static void ExchangeByPosition<T>(this IList<T> list, int position1, int position2)
+        {
+            list.Exchange(position1 - 1, position2 - 1);
+        }
+
+
         #endregion
 
         #region Private Methods 

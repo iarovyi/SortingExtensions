@@ -42,12 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\CachedReflectionExtensionsTests.cs" />
+    <Compile Include="Extensions\ComparableExtensionsTests.cs" />
+    <Compile Include="Extensions\ListExtensionsTests.cs" />
     <Compile Include="Implementation\RandomProviderTests.cs" />
+    <Compile Include="Implementation\ReversedComparerTests.cs" />
+    <Compile Include="Implementation\SelectHelperTest.cs" />
     <Compile Include="Implementation\SingletonSorterProviderTests.cs" />
     <Compile Include="Implementation\SorterFactoryTests.cs" />
     <Compile Include="Implementation\Sorters\SorterTestBase.cs" />
     <Compile Include="Implementation\Sorters\SortingAlgorithmsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestSorter.cs" />
+    <Compile Include="TestSortProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SortingExtensions\SortingExtensions.csproj">
