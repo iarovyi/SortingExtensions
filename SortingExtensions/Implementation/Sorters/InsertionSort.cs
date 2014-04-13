@@ -5,30 +5,23 @@ using SortingExtensions.Extensions;
 
 namespace SortingExtensions.Implementation.Sorters
 {
+    /// <summary>
+    /// Insertion sort - The algorithm that people often use to sort bridge hands is to consider
+    ///                  the cards one at a time, inserting each into its proper place among those already
+    ///                  considered (keeping them sorted).
+    /// 
+    /// + stable sort
+    /// - effective only for small arrays because exchanges are done on adjacent items
+    /// 
+    /// Performance: N^2/4 compares and N^2/4 exchanges on average (on randomly sorted array)
+    ///              N^2/2 compares and N^2/2 exchanges on worst case (array is sorted in descending order)
+    ///              Best case (sorted in ascending order) it makes N-1 compares and 0 exchanges
+    ///              For partially-sorted arrays it runs in linear time
+    /// </summary>
     internal class InsertionSort<TComparable> : ISorter<TComparable> where TComparable : IComparable<TComparable>
     {
-        /*
-         * Stable sort
-         * 
-            The algorithm that people often use to sort bridge hands is to consider
-            the cards one at a time, inserting each into its proper place among those already
-            considered (keeping them sorted).
-         * N^2/4 compares and N^2/4 exchanges on average (on randomly sorted array)
-         * N^2/2 compares and N^2/2 exchanges on worst case (array is sorted in descending order)
-         * 
-         * эфективна на малых наборах(потому что перестановки только для соседних элементов), устойчива
-         * + best case (sorted in ascending order) it makes N-1 compares and 0 exchanges
-         * For partially-sorted arrays it runs in linear time
-         */
         public void Sort(IList<TComparable> list, IComparer<TComparable> comparer)
         {
-            /*for (int i = 0; i < list.Count; i++)
-            {
-                for (int j = i; j > 0 && list[j].IsLessThan(list[j - 1]); j--)
-                {
-                    list.Exchange(j, j - 1);
-                }
-            }*/
             Sort(list, 0, list.Count - 1, comparer);
         }
 
@@ -37,12 +30,11 @@ namespace SortingExtensions.Implementation.Sorters
             Sort(list, 0, list.Count - 1, Comparer<TComparable>.Default);
         }
 
-        internal void Sort<TComparable>(IList<TComparable> list, int lo, int hi, IComparer<TComparable> comparer)
-            where TComparable : IComparable<TComparable>
+        internal void Sort(IList<TComparable> list, int lo, int hi, IComparer<TComparable> comparer)
         {
-            for (int i = lo/*0*/; i <= hi/*< list.Count*/; i++)
+            for (int i = lo; i <= hi; i++)
             {
-                for (int j = i; j > lo/*0*/ && list[j].IsLessThan(list[j - 1]); j--)
+                for (int j = i; j > lo && list[j].IsLessThan(list[j - 1], comparer); j--)
                 {
                     list.Exchange(j, j - 1);
                 }
@@ -50,9 +42,16 @@ namespace SortingExtensions.Implementation.Sorters
         }
     }
 
-    internal static class InsertionSorterProvider<TComparable> where TComparable : IComparable<TComparable>
+    internal class InsertionSorterProvider : ISorterProvider
     {
-        internal static ISorter<TComparable> GetSorter(SortAlgorithm algorithm)
+        public static readonly InsertionSorterProvider Instance;
+
+        static InsertionSorterProvider()
+        {
+            Instance = new InsertionSorterProvider();
+        }
+
+        public ISorter<TComparable> GetSorter<TComparable>(string algorithmName) where TComparable : IComparable<TComparable>
         {
             return SingletonSorterProvider<InsertionSort<TComparable>, TComparable>.GetSorter();
         }

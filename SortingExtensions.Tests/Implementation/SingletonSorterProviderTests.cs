@@ -2,6 +2,7 @@
 using SortingExtensions.Contracts;
 using SortingExtensions.Implementation;
 using SortingExtensions.Implementation.Sorters;
+using SortingExtensions.Implementation.Sorters.QuickSorts;
 
 namespace SortingExtensions.Tests.Implementation
 {

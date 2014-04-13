@@ -59,9 +59,9 @@ namespace SortingExtensions.Implementation.Sorters
         }
     }
 
-    internal static class HeapSorterProvider<TComparable> where TComparable : IComparable<TComparable>
+    internal class HeapSorterProvider : ISorterProvider
     {
-        internal static ISorter<TComparable> GetSorter(SortAlgorithm algorithm)
+        public ISorter<TComparable> GetSorter<TComparable>(string algorithmName) where TComparable : IComparable<TComparable>
         {
             return SingletonSorterProvider<HeapSort<TComparable>, TComparable>.GetSorter();
         }

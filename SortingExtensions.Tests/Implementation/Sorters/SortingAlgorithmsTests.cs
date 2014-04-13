@@ -1,12 +1,23 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 using SortingExtensions.Contracts;
+using SortingExtensions.Implementation.Sorters;
 
 namespace SortingExtensions.Tests.Implementation.Sorters
 {
     [TestFixture]
     class SortingAlgorithmsTests : SorterTestBase
     {
+        /*[Test]
+        public void Hello()
+        {
+            var list = Enumerable.Range(0, 20).Reverse().ToList();
+            var s = new ShellSort<int>();
+            s.Sort(list, 5, 10, Comparer<int>.Default);
+        }*/
+
+
         [Test]
         [TestCaseSource("DifferentLists")]
         public void HeapSort_Sorts_List(IList<int> list)

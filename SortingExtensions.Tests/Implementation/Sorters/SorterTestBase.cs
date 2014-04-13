@@ -55,7 +55,7 @@ namespace SortingExtensions.Tests.Implementation.Sorters
 
         protected bool IsSorted<TComparable>(IList<TComparable> list) where TComparable : IComparable<TComparable>
         {
-            return list.IsSorted(Comparer<TComparable>.Default);
+            return list.IsSorted();
         }
     }
 }

@@ -3,6 +3,8 @@ using NUnit.Framework;
 using SortingExtensions.Contracts;
 using SortingExtensions.Implementation;
 using SortingExtensions.Implementation.Sorters;
+using SortingExtensions.Implementation.Sorters.MergeSorts;
+using SortingExtensions.Implementation.Sorters.QuickSorts;
 
 namespace SortingExtensions.Tests.Implementation
 {
@@ -13,13 +15,13 @@ namespace SortingExtensions.Tests.Implementation
         {
             get
             {
-                yield return new TestCaseData(SortAlgorithm.Shell).Returns(ShellSorterProvider<int>.GetSorter(SortAlgorithm.Shell));
-                yield return new TestCaseData(SortAlgorithm.Quick).Returns(QuickSortProvider<int>.GetSorter(SortAlgorithm.Quick));
-                yield return new TestCaseData(SortAlgorithm.Selection).Returns(SelectionSorterProvider<int>.GetSorter(SortAlgorithm.Selection));
-                yield return new TestCaseData(SortAlgorithm.MergeUpBottom).Returns(MergeSorterProvider<int>.GetSorter(SortAlgorithm.MergeUpBottom));
-                yield return new TestCaseData(SortAlgorithm.MergeBottomUp).Returns(MergeSorterProvider<int>.GetSorter(SortAlgorithm.MergeBottomUp));
-                yield return new TestCaseData(SortAlgorithm.Insertion).Returns(InsertionSorterProvider<int>.GetSorter(SortAlgorithm.Insertion));
-                yield return new TestCaseData(SortAlgorithm.Heap).Returns(HeapSorterProvider<int>.GetSorter(SortAlgorithm.Heap));
+                yield return new TestCaseData(SortAlgorithm.Shell).Returns(new ShellSorterProvider().GetSorter<int>(SortAlgorithm.Shell.ToString()));
+                yield return new TestCaseData(SortAlgorithm.Quick).Returns(new QuickSortProvider().GetSorter<int>(SortAlgorithm.Quick.ToString()));
+                yield return new TestCaseData(SortAlgorithm.Selection).Returns(new SelectionSorterProvider().GetSorter<int>(SortAlgorithm.Selection.ToString()));
+                yield return new TestCaseData(SortAlgorithm.MergeUpBottom).Returns(new MergeSorterProvider().GetSorter<int>(SortAlgorithm.MergeUpBottom.ToString()));
+                yield return new TestCaseData(SortAlgorithm.MergeBottomUp).Returns(new MergeSorterProvider().GetSorter<int>(SortAlgorithm.MergeBottomUp.ToString()));
+                yield return new TestCaseData(SortAlgorithm.Insertion).Returns(new InsertionSorterProvider().GetSorter<int>(SortAlgorithm.Insertion.ToString()));
+                yield return new TestCaseData(SortAlgorithm.Heap).Returns(new HeapSorterProvider().GetSorter<int>(SortAlgorithm.Heap.ToString()));
             }
         }
 
@@ -28,7 +30,7 @@ namespace SortingExtensions.Tests.Implementation
             get
             {
                 //TODO implement others
-                yield return new TestCaseData(SortCase.PartiallySorted).Returns(ShellSorterProvider<int>.GetSorter(SortAlgorithm.Bubble));
+                yield return new TestCaseData(SortCase.PartiallySorted).Returns(new ShellSorterProvider().GetSorter<int>(SortAlgorithm.Bubble.ToString()));
             }
         }
 
@@ -36,14 +38,14 @@ namespace SortingExtensions.Tests.Implementation
         [TestCaseSource("SorterProvidersByTypeCaseData")]
         public ISorter<int> SorterFactory_Returns_Correct_Sorter_By_Algorithm(SortAlgorithm sortAlgorithm)
         {
-            return SorterFactory<int>.GetSorter(sortAlgorithm);
+            return SorterFactory.GetSorter<int>(sortAlgorithm);
         }
 
         [Test]
         [TestCaseSource("SorterProvidersByCaseCaseData")]
         public ISorter<int> SorterFactory_Returns_Correct_Sorter_ByCase(SortCase sortCase)
         {
-            return SorterFactory<int>.GetSorter(sortCase);
+            return SorterFactory.GetSorter<int>(sortCase);
         }
     }
 }

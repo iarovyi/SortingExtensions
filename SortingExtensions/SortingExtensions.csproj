@@ -11,15 +11,50 @@
     <AssemblyName>SortingExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;l</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,17 +75,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\ISorter.cs" />
+    <Compile Include="Contracts\ISorterProvider.cs" />
     <Compile Include="Contracts\SortAlgorithm.cs" />
     <Compile Include="Contracts\SortCase.cs" />
+    <Compile Include="Contracts\SortOrder.cs" />
+    <Compile Include="Extensions\CachedReflectionExtensions.cs" />
     <Compile Include="Extensions\ComparableExtensions.cs" />
+    <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Implementation\RandomProvider.cs" />
+    <Compile Include="Implementation\ReversedComparer.cs" />
     <Compile Include="Implementation\SingletonSorterProvider.cs" />
     <Compile Include="Implementation\SorterFactory.cs" />
+    <Compile Include="Implementation\Sorters\BubbleSort.cs" />
     <Compile Include="Implementation\Sorters\HeapSort.cs" />
     <Compile Include="Implementation\Sorters\InsertionSort.cs" />
-    <Compile Include="Implementation\Sorters\MergeSort.cs" />
-    <Compile Include="Implementation\Sorters\QuickSort.cs" />
+    <Compile Include="Implementation\Sorters\MergeSorts\MergeBottomUpSort.cs" />
+    <Compile Include="Implementation\Sorters\MergeSorts\MergeSort.cs" />
+    <Compile Include="Implementation\Sorters\MergeSorts\MergeUpBottomSort.cs" />
+    <Compile Include="Implementation\Sorters\MergeSorts\MergeUpBottomSortWithCutoff.cs" />
+    <Compile Include="Implementation\Sorters\MergeSorts\MergeUpBottomSortForPartiallySorted.cs" />
+    <Compile Include="Implementation\Sorters\QuickSorts\BaseQuickSort.cs" />
+    <Compile Include="Implementation\Sorters\QuickSorts\QuickSort.cs" />
+    <Compile Include="Implementation\Sorters\QuickSorts\QuickSortMedianOfThree.cs" />
+    <Compile Include="Implementation\Sorters\QuickSorts\QuickSortWithCutoff.cs" />
+    <Compile Include="Implementation\Sorters\QuickSorts\QuickThreeWaySort.cs" />
+    <Compile Include="Implementation\SelectHelper.cs" />
+    <Compile Include="Implementation\Sorters\RadixSort.cs" />
     <Compile Include="Implementation\Sorters\SelectionSort.cs" />
     <Compile Include="Implementation\Sorters\ShellSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
