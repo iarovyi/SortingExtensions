@@ -51,6 +51,9 @@ namespace SortingExtensions
                                              SortAlgorithm algorithm)
            where TComparable : IComparable<TComparable>
         {
+            Contract.Requires(list != null);
+            Contract.Requires(!list.IsReadOnly);
+
             SorterFactory.GetSorter<TComparable>(algorithm).Sort(list, Comparer<TComparable>.Default);
         }
 
@@ -68,6 +71,9 @@ namespace SortingExtensions
                                              IComparer<TComparable> comparer = null)
            where TComparable : IComparable<TComparable>
         {
+            Contract.Requires(list != null);
+            Contract.Requires(!list.IsReadOnly);
+
             SorterFactory.GetSorter<TComparable>(algorithm).Sort(list, GetComparer(comparer, order));
         }
 
@@ -85,6 +91,9 @@ namespace SortingExtensions
                                              Comparison<TComparable> comparison)
             where TComparable : IComparable<TComparable>
         {
+            Contract.Requires(list != null);
+            Contract.Requires(!list.IsReadOnly);
+
             SorterFactory.GetSorter<TComparable>(algorithm).Sort(list, GetComparer(comparison, order));
         }
         #endregion
@@ -109,6 +118,7 @@ namespace SortingExtensions
             where TComparable : IComparable<TComparable>
         {
             Contract.Requires(list != null);
+            Contract.Requires(!list.IsReadOnly);
             Contract.Requires(property != null);
 
             Func<T, TComparable> propGetter = property.Compile();
@@ -136,6 +146,7 @@ namespace SortingExtensions
             where TComparable : IComparable<TComparable>
         {
             Contract.Requires(list != null);
+            Contract.Requires(!list.IsReadOnly);
             Contract.Requires(!string.IsNullOrWhiteSpace(propertyName));
 
             //TODO: optimaze
@@ -152,6 +163,7 @@ namespace SortingExtensions
             where TComparable : IComparable<TComparable>
         {
             Contract.Requires(list != null);
+            Contract.Requires(!list.IsReadOnly);
             Contract.Requires(property != null);
 
             Func<T, TComparable> propertyGetter = property.Compile();
@@ -241,6 +253,7 @@ namespace SortingExtensions
             where TComparable : IComparable<TComparable>
         {
             Contract.Requires(list != null);
+            Contract.Requires(!list.IsReadOnly);
 
             int length = list.Count;
             Random random = RandomProvider.GetThreadRandom();
@@ -297,6 +310,7 @@ namespace SortingExtensions
         internal static void Exchange<T>(this IList<T> list, int index1, int index2)
         {
             Contract.Requires(list != null);
+            Contract.Requires(!list.IsReadOnly);
 
             T temp = list[index1];
             list[index1] = list[index2];
@@ -305,6 +319,9 @@ namespace SortingExtensions
 
         internal static void ExchangeByPosition<T>(this IList<T> list, int position1, int position2)
         {
+            Contract.Requires(list != null);
+            Contract.Requires(!list.IsReadOnly);
+
             list.Exchange(position1 - 1, position2 - 1);
         }
 

@@ -4,13 +4,13 @@ using System.Diagnostics.Contracts;
 
 namespace SortingExtensions.Contracts
 {
-    //[ContractClass(typeof(ISorterContract<>))]
+    [ContractClass(typeof(ISorterContract<>))]
     public interface ISorter<TComparable> where TComparable : IComparable<TComparable>
     {
         void Sort(IList<TComparable> list, IComparer<TComparable> comparer);
     }
 
-    /*[ContractClassFor(typeof(ISorter<>))]
+    [ContractClassFor(typeof(ISorter<>))]
     public abstract class ISorterContract<TComparable> : ISorter<TComparable> where TComparable : IComparable<TComparable>
     {
         public void Sort(IList<TComparable> list, IComparer<TComparable> comparer)
@@ -19,8 +19,9 @@ namespace SortingExtensions.Contracts
                 throw new ArgumentNullException("list");
             if (comparer == null)
                 throw new ArgumentNullException("comparer");
+            Contract.Requires(!list.IsReadOnly);
             Contract.Ensures(list.IsSorted(0, list.Count - 1, comparer));
             Contract.EndContractBlock();
         }
-    }*/
+    }
 }

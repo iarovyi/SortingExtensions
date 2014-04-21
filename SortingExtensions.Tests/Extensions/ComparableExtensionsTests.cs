@@ -16,7 +16,7 @@ namespace SortingExtensions.Tests.Extensions
         [Test]
         public void IsLessThan_Works_Correct()
         {
-            Assert.That(4.IsLessThan(4, Comparer<int>.Default));
+            Assert.That(4.IsLessThan(5, Comparer<int>.Default));
         }
     }
 }
