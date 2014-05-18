@@ -7,6 +7,7 @@ namespace SortingExtensions.Implementation
     {
         private static int _seed = Environment.TickCount;
 
+        //Alternative: private static readonly ThreadLocal<Random> ThreadLocalRandom = new ThreadLocal<Random>(() => new Random(Guid.NewGuid().GetHashCode()));
         private static readonly ThreadLocal<Random> ThreadLocalRandom = new ThreadLocal<Random>(() => new Random(Interlocked.Increment(ref _seed)));
 
         internal static Random GetThreadRandom()
