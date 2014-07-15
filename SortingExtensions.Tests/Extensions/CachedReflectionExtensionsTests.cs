@@ -1,7 +1,7 @@
-﻿using NUnit.Framework;
-
-namespace SortingExtensions.Tests.Extensions
+﻿namespace SortingExtensions.Tests.Extensions
 {
+    using NUnit.Framework;
+
     //TODO: add tests
     [TestFixture]
     class CachedReflectionExtensionsTests

@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq.Expressions;
-using SortingExtensions.Contracts;
-using SortingExtensions.Extensions;
-using SortingExtensions.Implementation;
-using SortingExtensions.Implementation.Sorters.QuickSorts;
-
-namespace SortingExtensions
+﻿namespace SortingExtensions
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+    using System.Linq.Expressions;
+    using Contracts;
+    using Extensions;
+    using Implementation;
+    using Implementation.Sorters.QuickSorts;
+
     public static class ListExtensions
     {
         #region Condition-based sorting extensions

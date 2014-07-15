@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using SortingExtensions.Contracts;
-
-namespace SortingExtensions.Implementation.Sorters.QuickSorts
+﻿namespace SortingExtensions.Implementation.Sorters.QuickSorts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+    using Contracts;
+
     /// <summary>
     /// Quick sort has too much overhead for small arrays
     /// </summary>

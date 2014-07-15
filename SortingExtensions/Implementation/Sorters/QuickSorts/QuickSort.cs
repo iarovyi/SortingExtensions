@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using SortingExtensions.Extensions;
-
-namespace SortingExtensions.Implementation.Sorters.QuickSorts
+﻿namespace SortingExtensions.Implementation.Sorters.QuickSorts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+    using Extensions;
+
     /// <summary>
     /// http://www.sorting-algorithms.com/quick-sort
     /// </summary>

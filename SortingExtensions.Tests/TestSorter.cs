@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using SortingExtensions.Contracts;
-using SortingExtensions.Implementation;
-
-namespace SortingExtensions.Tests
+﻿namespace SortingExtensions.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using Contracts;
+    using SortingExtensions.Implementation;
+
     public class TestSorter<TComparable> : ISorter<TComparable> where TComparable : IComparable<TComparable>
     {
         public void Sort(IList<TComparable> list, IComparer<TComparable> comparer)

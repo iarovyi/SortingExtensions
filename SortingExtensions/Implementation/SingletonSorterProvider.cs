@@ -1,9 +1,9 @@
-﻿using System;
-using System.Threading;
-using SortingExtensions.Contracts;
-
-namespace SortingExtensions.Implementation
+﻿namespace SortingExtensions.Implementation
 {
+    using System;
+    using System.Threading;
+    using Contracts;
+
     internal static class SingletonSorterProvider<TSorter, TComparable>
         where TSorter : class, ISorter<TComparable>, new()
         where TComparable : IComparable<TComparable>

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq.Expressions;
-using SortingExtensions.Extensions;
-
-namespace SortingExtensions.Implementation.Sorters.QuickSorts
+﻿namespace SortingExtensions.Implementation.Sorters.QuickSorts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+
     /// <summary>
     /// Dijkstra proved that simple Quick sort can become quadratic on duplicate keys.
     /// This problem can be solved with merge sort or 3-way quick sort.

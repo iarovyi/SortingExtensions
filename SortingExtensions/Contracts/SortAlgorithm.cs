@@ -1,5 +1,4 @@
-﻿
-namespace SortingExtensions.Contracts
+﻿namespace SortingExtensions.Contracts
 {
     public enum SortAlgorithm
     {

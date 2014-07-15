@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using SortingExtensions.Contracts;
-
-namespace SortingExtensions.Implementation.Sorters.QuickSorts
+﻿namespace SortingExtensions.Implementation.Sorters.QuickSorts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+    using Contracts;
+
     internal abstract class BaseQuickSort<TComparable> : ISorter<TComparable> where TComparable : IComparable<TComparable>
     {
         public void Sort(IList<TComparable> list, IComparer<TComparable> comparer)

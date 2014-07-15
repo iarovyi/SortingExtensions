@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace SortingExtensions.Tests.Implementation.Sorters
+﻿namespace SortingExtensions.Tests.Implementation.Sorters
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     class SorterTestBase
     {
         protected IList<int> OrderedList

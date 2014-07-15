@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
-using SortingExtensions.Implementation;
-
 namespace SortingExtensions.Tests.Implementation
 {
+    using SortingExtensions.Implementation;
+
     [TestFixture]
     class SelectHelperTest
     {

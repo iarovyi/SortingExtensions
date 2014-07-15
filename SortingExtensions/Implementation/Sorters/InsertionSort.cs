@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using SortingExtensions.Contracts;
-using SortingExtensions.Extensions;
-
-namespace SortingExtensions.Implementation.Sorters
+﻿namespace SortingExtensions.Implementation.Sorters
 {
+    using System;
+    using System.Collections.Generic;
+    using Contracts;
+    using Extensions;
+
     /// <summary>
     /// Insertion sort - The algorithm that people often use to sort bridge hands is to consider
     ///                  the cards one at a time, inserting each into its proper place among those already

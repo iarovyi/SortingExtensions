@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using SortingExtensions.Contracts;
-
-namespace SortingExtensions.Demo
+﻿namespace SortingExtensions.Demo
 {
+    using System;
+    using System.Collections.Generic;
+    using Contracts;
+
     class Program
     {
         static void Main(string[] args)

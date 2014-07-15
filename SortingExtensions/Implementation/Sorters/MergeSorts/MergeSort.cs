@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using SortingExtensions.Contracts;
-using SortingExtensions.Extensions;
-
-namespace SortingExtensions.Implementation.Sorters.MergeSorts
+﻿namespace SortingExtensions.Implementation.Sorters.MergeSorts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+    using Contracts;
+    using Extensions;
+
     /// <summary>
     /// Merge sort - Merge sort is optimal with respect to compares, but its not optimal with repect to memory
     /// 

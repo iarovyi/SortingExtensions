@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SortingExtensions.Extensions
+﻿namespace SortingExtensions.Extensions
 {
+    using System;
+    using System.Collections.Generic;
+
     internal static class ComparableExtensions
     {
         internal static bool IsLessThan<TComparable>(this TComparable item1,

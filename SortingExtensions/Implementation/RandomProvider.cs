@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading;
-
-namespace SortingExtensions.Implementation
+﻿namespace SortingExtensions.Implementation
 {
+    using System;
+    using System.Threading;
+
     internal static class RandomProvider
     {
         private static int _seed = Environment.TickCount;

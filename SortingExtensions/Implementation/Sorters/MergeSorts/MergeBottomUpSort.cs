@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-
-namespace SortingExtensions.Implementation.Sorters.MergeSorts
+﻿namespace SortingExtensions.Implementation.Sorters.MergeSorts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+
     /// <summary>
     /// Bottom-up mergesort is without recursion so it requires less stack memory.
     /// 

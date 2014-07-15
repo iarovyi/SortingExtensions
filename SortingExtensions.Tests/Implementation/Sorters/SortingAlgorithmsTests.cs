@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using NUnit.Framework;
-using SortingExtensions.Contracts;
-using SortingExtensions.Implementation;
-
-namespace SortingExtensions.Tests.Implementation.Sorters
+﻿namespace SortingExtensions.Tests.Implementation.Sorters
 {
+    using System;
+    using System.Collections.Generic;
+    using NUnit.Framework;
+    using Contracts;
+    using SortingExtensions.Implementation;
+
     [TestFixture]
     class SortingAlgorithmsTests : SorterTestBase
     {

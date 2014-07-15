@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-
-namespace SortingExtensions.Contracts
+﻿namespace SortingExtensions.Contracts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+
     [ContractClass(typeof(ISorterContract<>))]
     public interface ISorter<TComparable> where TComparable : IComparable<TComparable>
     {

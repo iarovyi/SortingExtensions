@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using SortingExtensions.Contracts;
-
-namespace SortingExtensions.Implementation.Sorters.MergeSorts
+﻿namespace SortingExtensions.Implementation.Sorters.MergeSorts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+    using Contracts;
+
     /// <summary>
     /// Top-bottom merge sort with improvement for tiny arrays.
     /// Merge sort has too much overhead for tiny subarrays so this improvement increase performance by 20% for small arrays.

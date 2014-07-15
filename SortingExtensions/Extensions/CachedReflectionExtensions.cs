@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.ComponentModel;
-using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Reflection;
-
-namespace SortingExtensions.Extensions
+﻿namespace SortingExtensions.Extensions
 {
+    using System;
+    using System.Collections.Concurrent;
+    using System.ComponentModel;
+    using System.Diagnostics.Contracts;
+    using System.Linq;
+    using System.Reflection;
+
     public static class CachedReflectionExtensions
     {
         private static readonly char[] ExpressionPartSeparator = new char[] { '.' };

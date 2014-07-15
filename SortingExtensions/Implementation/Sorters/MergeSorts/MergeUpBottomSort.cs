@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-
-namespace SortingExtensions.Implementation.Sorters.MergeSorts
+﻿namespace SortingExtensions.Implementation.Sorters.MergeSorts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+
     /// <summary>
     /// Top-down mergesort (recursively divide and sort)
     /// </summary>

@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using SortingExtensions.Contracts;
-using SortingExtensions.Implementation.Sorters;
-using SortingExtensions.Implementation.Sorters.MergeSorts;
-using SortingExtensions.Implementation.Sorters.QuickSorts;
-
-namespace SortingExtensions.Implementation
+﻿namespace SortingExtensions.Implementation
 {
+    using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+    using Contracts;
+    using Sorters;
+    using Sorters.MergeSorts;
+    using Sorters.QuickSorts;
+
     public static class SorterFactory
     {
         private static readonly ConcurrentDictionary<string, ISorterProvider> SorterProviders;

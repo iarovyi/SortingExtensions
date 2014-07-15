@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using SortingExtensions.Extensions;
-
-namespace SortingExtensions.Implementation.Sorters.QuickSorts
+﻿namespace SortingExtensions.Implementation.Sorters.QuickSorts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+    using Extensions;
+
     /// <summary>
     /// Quick sort with median of three improvement can improve performance by 10% 
     /// because it slightly decrese number of compares, increases number of exchanges.

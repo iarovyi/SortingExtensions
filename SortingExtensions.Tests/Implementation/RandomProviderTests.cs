@@ -1,10 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using SortingExtensions.Implementation;
-
-namespace SortingExtensions.Tests.Implementation
+﻿namespace SortingExtensions.Tests.Implementation
 {
+    using System;
+    using System.Threading.Tasks;
+    using NUnit.Framework;
+    using SortingExtensions.Implementation;
+
     [TestFixture]
     class RandomProviderTests
     {

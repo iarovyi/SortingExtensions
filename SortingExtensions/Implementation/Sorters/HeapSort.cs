@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using SortingExtensions.Contracts;
-
-namespace SortingExtensions.Implementation.Sorters
+﻿namespace SortingExtensions.Implementation.Sorters
 {
+    using System;
+    using System.Collections.Generic;
+    using Contracts;
+
     /// <summary>
     /// Heap sort - can be treated as improved bubble sort where element pops (min-heap)/ sink (max-heap) by many ways
     ///             http://upload.wikimedia.org/wikipedia/commons/4/4d/Heapsort-example.gif

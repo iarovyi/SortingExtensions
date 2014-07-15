@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using SortingExtensions.Implementation.Sorters.QuickSorts;
-
-namespace SortingExtensions.Implementation
+﻿namespace SortingExtensions.Implementation
 {
+    using System;
+    using System.Collections.Generic;
+    using Sorters.QuickSorts;
+
     internal static class SelectHelper<TComparable> where TComparable : IComparable<TComparable>
     {
         /// <summary>

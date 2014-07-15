@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using SortingExtensions.Contracts;
-using SortingExtensions.Extensions;
-
-namespace SortingExtensions.Implementation.Sorters
+﻿namespace SortingExtensions.Implementation.Sorters
 {
+    using System;
+    using System.Collections.Generic;
+    using Contracts;
+    using Extensions;
+
     /// <summary>
     /// Shell sort - Move entries more than one position at a time by h-sorting the arrray.
     ///              an h-sorted array is h interleaved sorted subsequences

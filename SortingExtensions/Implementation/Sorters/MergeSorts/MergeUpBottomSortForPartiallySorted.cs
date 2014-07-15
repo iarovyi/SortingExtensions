@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using SortingExtensions.Extensions;
-
-namespace SortingExtensions.Implementation.Sorters.MergeSorts
+﻿namespace SortingExtensions.Implementation.Sorters.MergeSorts
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+    using Extensions;
+
     /// <summary>
     /// Top-bottom merge sort with improvement for sorting partially-orderred arrays.
     /// </summary>

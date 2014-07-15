@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using NUnit.Framework;
-
-namespace SortingExtensions.Tests.Extensions
+﻿namespace SortingExtensions.Tests.Extensions
 {
+    using System.Collections.Generic;
+    using NUnit.Framework;
+
     //TODO: test all extension methods
     [TestFixture]
     class ListExtensionsTests

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace SortingExtensions.Implementation
+﻿namespace SortingExtensions.Implementation
 {
+    using System.Collections.Generic;
+
     class ReversedComparer<T> : IComparer<T>
     {
         private readonly IComparer<T> _comparer;

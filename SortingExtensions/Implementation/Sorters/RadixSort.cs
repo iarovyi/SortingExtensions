@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using SortingExtensions.Contracts;
-
-namespace SortingExtensions.Implementation.Sorters
+﻿namespace SortingExtensions.Implementation.Sorters
 {
+    using System;
+    using System.Collections.Generic;
+    using Contracts;
+
     /// <summary>
     /// There are two types of radix sorting:
     ///   - Least significant digit (LSD) radix sort

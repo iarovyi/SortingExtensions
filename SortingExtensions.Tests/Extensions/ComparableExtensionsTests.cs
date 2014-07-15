@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using NUnit.Framework;
-using SortingExtensions.Extensions;
-
-namespace SortingExtensions.Tests.Extensions
+﻿namespace SortingExtensions.Tests.Extensions
 {
+    using System.Collections.Generic;
+    using NUnit.Framework;
+    using SortingExtensions.Extensions;
+
     [TestFixture]
     class ComparableExtensionsTests
     {

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using SortingExtensions.Contracts;
-using SortingExtensions.Extensions;
-
-namespace SortingExtensions.Implementation.Sorters
+﻿namespace SortingExtensions.Implementation.Sorters
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
+    using Contracts;
+    using Extensions;
+
     internal class BubbleSort<TComparable> : ISorter<TComparable> where TComparable : IComparable<TComparable>
     {
         public void Sort(IList<TComparable> list, IComparer<TComparable> comparer)

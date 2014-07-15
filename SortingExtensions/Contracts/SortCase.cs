@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace SortingExtensions.Contracts
+﻿namespace SortingExtensions.Contracts
 {
+    using System;
+
     //TODO: implement selection of sort algorithm by sort case                       http://www.codeproject.com/Articles/6792/Masks-and-flags-using-bit-fields-in-NET
     //http://en.wikipedia.org/wiki/Greedy_algorithm
     [Flags]
